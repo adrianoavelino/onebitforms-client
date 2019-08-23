@@ -1,9 +1,28 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { Angular2TokenService, A2tUiModule} from 'angular2-token';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class FormService {
+  constructor(private http: Http, private _tokenService: Angular2TokenService) { }
 
-  constructor() { }
+  getForms() {
+    return this._tokenService.get('forms').map(res =&gt; res.json());
+  }
+
+  getForm(form_id) {
+    return this._tokenService.get('forms/' + form_id).map(res =&gt; res.json());
+  }
+
+  createForm(form_params) {
+    return this._tokenService.post('forms', form_params).map(res =&gt; res.json());
+  }
+
+  updateForm(form_id, form_params) {
+    return this._tokenService.put('forms/' + form_id, form_params).map(res =&gt; res.json());
+  }
+
+  destroyForm(form_id) {
+    return this._tokenService.delete('forms/' + form_id).map(res =&gt; res.json());
+  }
 }
