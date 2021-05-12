@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
     "angular2-token": "^0.2.0-beta.12",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "mdi": "^2.2.43",
     "ng2-charts": "^1.6.0",
     "ng2-materialize": "^1.6.0",
